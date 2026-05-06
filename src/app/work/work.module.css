@@ -1,0 +1,24 @@
+.page {
+  padding-top: 100px;
+}
+
+.header {
+  max-width: var(--container-content);
+  margin: 0 auto;
+  padding: var(--space-10) 28px var(--space-8);
+}
+
+.heading {
+  font-size: var(--text-display-lg);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  color: var(--color-text);
+  text-transform: lowercase;
+}
+
+@media (max-width: 809px) {
+  .header {
+    padding: var(--space-8) 16px var(--space-6);
+  }
+}

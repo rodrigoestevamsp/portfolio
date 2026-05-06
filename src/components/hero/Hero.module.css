@@ -1,0 +1,64 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 28px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--container-content);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.line {
+  display: block;
+  font-size: var(--text-display-xl);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  color: var(--color-text);
+  text-transform: lowercase;
+  width: 100%;
+}
+
+.left  { text-align: left; }
+.right { text-align: right; }
+
+/* ─── Scroll hint ────────────────────────────────────────── */
+.scrollHint {
+  position: absolute;
+  bottom: 40px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: var(--font-weight-med);
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+}
+
+.scrollLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-text-muted);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 809px) {
+  .hero {
+    padding: 100px 16px 60px;
+    min-height: 100svh;
+  }
+
+  .scrollHint {
+    left: 16px;
+    bottom: 28px;
+  }
+}

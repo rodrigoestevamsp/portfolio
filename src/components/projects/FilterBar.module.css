@@ -1,0 +1,70 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0 28px var(--space-8);
+  max-width: var(--container-content);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.chip {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--color-overlay-sm);
+  border-radius: var(--radius-chip);
+  padding: 8px 20px;
+  font-family: var(--font-family);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-med);
+  letter-spacing: var(--tracking-tag);
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+  overflow: hidden;
+}
+
+.chip:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.chipActive {
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.chipBg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-text);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.chipLabel {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 809px) {
+  .bar {
+    padding: 0 16px var(--space-7);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
