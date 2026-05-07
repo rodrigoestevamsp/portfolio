@@ -1,4 +1,5 @@
 export type ProjectCategory = 'branding' | 'digital'
+export type ProjectMediaType = 'gif' | 'video'
 
 export interface Project {
   slug: string
@@ -8,4 +9,6 @@ export interface Project {
   imageUrl: string
   description: string
   featured?: boolean
+  mediaType?: ProjectMediaType
+  mediaUrl?: string
 }

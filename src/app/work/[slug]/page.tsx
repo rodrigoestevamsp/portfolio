@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { projects } from '@/data/projects'
 import ScrollReveal from '@/components/motion/ScrollReveal'
+import MediaRenderer from '@/components/media/MediaRenderer'
 import styles from './slug.module.css'
 
 interface Props {
@@ -43,14 +43,14 @@ export default async function ProjectPage({ params }: Props) {
         </ScrollReveal>
       </div>
 
-      {/* Main image */}
+      {/* Main media */}
       <ScrollReveal variant="standard" delay={0.2}>
         <div className={styles.imageWrapper}>
-          <Image
-            src={project.imageUrl}
+          <MediaRenderer
+            imageUrl={project.imageUrl}
+            mediaUrl={project.mediaUrl}
+            mediaType={project.mediaType}
             alt={project.title}
-            fill
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
             sizes="(max-width: 809px) 100vw, 90vw"
             priority
           />

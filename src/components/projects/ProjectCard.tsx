@@ -1,11 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import styles from './ProjectCard.module.css'
 import { STAGGER_ITEM } from '@/lib/constants'
 import { Project } from '@/types/project'
+import MediaRenderer from '@/components/media/MediaRenderer'
 
 interface ProjectCardProps {
   project: Project
@@ -21,11 +21,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <Link href={`/work/${project.slug}`} className={styles.link}>
         <div className={styles.imageWrapper}>
-          <Image
-            src={project.imageUrl}
+          <MediaRenderer
+            imageUrl={project.imageUrl}
+            mediaUrl={project.mediaUrl}
+            mediaType={project.mediaType}
             alt={project.title}
-            fill
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
             sizes="(max-width: 809px) 100vw, 50vw"
             priority={index < 2}
             className={styles.image}
