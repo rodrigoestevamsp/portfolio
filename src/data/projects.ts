@@ -20,6 +20,13 @@ export const projects: Project[] = [
         text: 'redefining a global sports brand through type, color, and system thinking.',
       },
       {
+        layout: 'overlay',
+        label: 'in context',
+        text: 'a brand system that performs at every scale.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'context background' },
+        media2: { imageUrl: '/images/projects/decathlon-brand.png',    alt: 'detail overlay' },
+      },
+      {
         layout: 'split',
         media:  { imageUrl: '/images/projects/decathlon-brand.png', alt: 'brand detail' },
         media2: { imageUrl: '/images/projects/banner.png', alt: 'campaign application' },

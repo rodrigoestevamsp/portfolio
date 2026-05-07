@@ -1,6 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import MediaRenderer from '@/components/media/MediaRenderer'
 import type { CaseBlock, CaseBlockMedia } from '@/types/project'
 import { EASE_OUT } from '@/lib/constants'
@@ -37,6 +38,72 @@ function MediaSlot({ media, className }: { media: CaseBlockMedia; className?: st
   )
 }
 
+/* ── Overlay block: full-bg + rising card ─────────────────── */
+function OverlayBlock({ block }: { block: CaseBlock }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  })
+
+  // Background drifts upward slower than page scroll — classic parallax
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0px', '-80px'])
+
+  // Card rises in from below as section enters viewport
+  const cardY      = useTransform(scrollYProgress, [0.05, 0.5],  ['80px', '0px'])
+  const cardOpacity = useTransform(scrollYProgress, [0.05, 0.28], [0, 1])
+
+  return (
+    <div ref={ref} className={styles.overlayBlock}>
+
+      {/* Background image with parallax */}
+      <div className={styles.overlayBg}>
+        <motion.div className={styles.overlayBgInner} style={{ y: bgY }}>
+          {block.media && (
+            <MediaRenderer
+              imageUrl={block.media.imageUrl}
+              mediaUrl={block.media.mediaUrl}
+              mediaType={block.media.type}
+              alt={block.media.alt ?? ''}
+              sizes="100vw"
+            />
+          )}
+        </motion.div>
+
+        {/* Gradient scrim for text legibility */}
+        <div className={styles.overlayScrim} aria-hidden />
+
+        {/* Text anchored bottom-left */}
+        {(block.label || block.text) && (
+          <div className={styles.overlayTextBox}>
+            {block.label && <p className={styles.textLabel}>{block.label}</p>}
+            {block.text  && <p className={styles.overlayTitle}>{block.text}</p>}
+          </div>
+        )}
+      </div>
+
+      {/* Floating card — rises up on scroll, overlaps bg bottom-right */}
+      {block.media2 && (
+        <motion.div
+          className={styles.overlayCard}
+          style={{ y: cardY, opacity: cardOpacity }}
+        >
+          <div className={styles.overlayCardInner}>
+            <MediaRenderer
+              imageUrl={block.media2.imageUrl}
+              mediaUrl={block.media2.mediaUrl}
+              mediaType={block.media2.type}
+              alt={block.media2.alt ?? ''}
+              sizes="(max-width: 809px) 90vw, 40vw"
+            />
+          </div>
+        </motion.div>
+      )}
+    </div>
+  )
+}
+
+/* ── Main renderer ────────────────────────────────────────── */
 export default function CaseBlocks({ blocks }: CaseBlocksProps) {
   if (!blocks?.length) return null
 
@@ -87,6 +154,9 @@ export default function CaseBlocks({ blocks }: CaseBlocksProps) {
                 </div>
               </FadeUp>
             )
+
+          case 'overlay':
+            return <OverlayBlock key={i} block={block} />
 
           default:
             return null

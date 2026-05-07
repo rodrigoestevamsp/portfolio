@@ -1,6 +1,6 @@
 export type ProjectCategory = 'branding' | 'digital'
 export type ProjectMediaType = 'gif' | 'video'
-export type CaseBlockLayout = 'full' | 'split' | 'text' | 'feature' | 'feature-reverse'
+export type CaseBlockLayout = 'full' | 'split' | 'text' | 'feature' | 'feature-reverse' | 'overlay'
 
 export interface CaseBlockMedia {
   imageUrl: string        // static image or poster for video/gif
