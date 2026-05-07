@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import ScrollReveal from '@/components/motion/ScrollReveal'
 import MediaRenderer from '@/components/media/MediaRenderer'
+import CaseBlocks from '@/components/cases/CaseBlocks'
 import type { Project } from '@/types/project'
 import styles from '@/app/work/[slug]/slug.module.css'
 
@@ -12,6 +13,8 @@ interface CasePageTemplateProps {
 export default function CasePageTemplate({ project, nextProject }: CasePageTemplateProps) {
   return (
     <main className={styles.page}>
+
+      {/* ── Header: title + meta ── */}
       <div className={styles.hero}>
         <h1 className={styles.title}>{project.title}</h1>
         <div className={styles.meta}>
@@ -21,6 +24,7 @@ export default function CasePageTemplate({ project, nextProject }: CasePageTempl
         </div>
       </div>
 
+      {/* ── Hero media ── */}
       <ScrollReveal variant="subtle">
         <div className={styles.imageWrapper}>
           <MediaRenderer
@@ -34,32 +38,17 @@ export default function CasePageTemplate({ project, nextProject }: CasePageTempl
         </div>
       </ScrollReveal>
 
-      <section className={styles.caseIntro}>
+      {/* ── Description ── */}
+      <div className={styles.description}>
         <ScrollReveal variant="subtle">
-          <div className={styles.caseTextColumn}>
-            <p className={styles.caseEyebrow}>{project.category}</p>
-            <h2 className={styles.caseLead}>{project.title}.</h2>
-            <p className={styles.caseBody}>
-              <span className={styles.caseDot} aria-hidden>
-                ●
-              </span>
-              {project.description}
-            </p>
-          </div>
+          <p className={styles.descriptionText}>{project.description}</p>
         </ScrollReveal>
-        <ScrollReveal variant="subtle" delay={0.08}>
-          <div className={styles.caseMediaColumn}>
-            <div className={styles.caseMediaFrame}>
-              <MediaRenderer
-                imageUrl={project.caseImageUrl ?? project.imageUrl}
-                alt={`${project.title} detail`}
-                sizes="(max-width: 809px) 100vw, 48vw"
-              />
-            </div>
-          </div>
-        </ScrollReveal>
-      </section>
+      </div>
 
+      {/* ── Content blocks ── */}
+      <CaseBlocks blocks={project.blocks} />
+
+      {/* ── Next project ── */}
       <div className={styles.nextProject}>
         <ScrollReveal variant="subtle">
           <p className={styles.nextLabel}>next project</p>
@@ -73,10 +62,9 @@ export default function CasePageTemplate({ project, nextProject }: CasePageTempl
       </div>
 
       <div className={styles.back}>
-        <Link href="/work" className={styles.backLink}>
-          ← all work
-        </Link>
+        <Link href="/work" className={styles.backLink}>← all work</Link>
       </div>
+
     </main>
   )
 }
