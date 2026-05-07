@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
-import ScrollReveal from '@/components/motion/ScrollReveal'
+import { motion } from 'framer-motion'
+import { EASE_OUT } from '@/lib/constants'
 import styles from './Footer.module.css'
 
 const socialLinks = [
@@ -12,21 +15,21 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       {/* CTA section */}
-      <div className={styles.cta}>
-        <ScrollReveal variant="standard">
-          <p className={styles.ctaEyebrow}>let&apos;s create something</p>
-        </ScrollReveal>
-        <ScrollReveal variant="dramatic" delay={0.1}>
-          <h2 className={styles.ctaHeading}>
-            <span className={styles.ctaLeft}>together.</span>
-          </h2>
-        </ScrollReveal>
-        <ScrollReveal variant="subtle" delay={0.3}>
-          <Link href="/contact" className={styles.ctaButton}>
-            Say hi
-          </Link>
-        </ScrollReveal>
-      </div>
+      <motion.div
+        className={styles.cta}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '0px' }}
+        transition={{ duration: 0.7, ease: EASE_OUT }}
+      >
+        <p className={styles.ctaEyebrow}>let&apos;s create something</p>
+        <h2 className={styles.ctaHeading}>
+          <span className={styles.ctaLeft}>together.</span>
+        </h2>
+        <Link href="/contact" className={styles.ctaButton}>
+          Say hi
+        </Link>
+      </motion.div>
 
       {/* Bottom bar */}
       <div className={styles.bottom}>
