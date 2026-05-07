@@ -43,6 +43,13 @@ export const projects: Project[] = [
         text: 'from digital touchpoints to physical spaces — consistency at every scale.',
         media: { imageUrl: '/images/projects/decathlon-brand.png', alt: 'brand applications' },
       },
+      {
+        layout: 'overlay-reverse',
+        label: 'digital',
+        text: 'seamless across every screen and every surface.',
+        media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'digital background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'digital detail' },
+      },
     ],
   },
   {

@@ -39,7 +39,7 @@ function MediaSlot({ media, className }: { media: CaseBlockMedia; className?: st
 }
 
 /* ── Overlay block: full-bg + rising card ─────────────────── */
-function OverlayBlock({ block }: { block: CaseBlock }) {
+function OverlayBlock({ block, reverse = false }: { block: CaseBlock; reverse?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -50,7 +50,7 @@ function OverlayBlock({ block }: { block: CaseBlock }) {
   const bgY = useTransform(scrollYProgress, [0, 1], ['0px', '-80px'])
 
   // Card travels a much larger distance — intense parallax, feels fast vs bg
-  const cardY       = useTransform(scrollYProgress, [0, 1],    ['140px', '-220px'])
+  const cardY       = useTransform(scrollYProgress, [0, 1],       ['140px', '-220px'])
   const cardOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
 
   return (
@@ -70,22 +70,20 @@ function OverlayBlock({ block }: { block: CaseBlock }) {
           )}
         </motion.div>
 
-        {/* Gradient scrim for text legibility */}
         <div className={styles.overlayScrim} aria-hidden />
 
-        {/* Text anchored bottom-left */}
         {(block.label || block.text) && (
-          <div className={styles.overlayTextBox}>
+          <div className={reverse ? styles.overlayTextBoxRight : styles.overlayTextBox}>
             {block.label && <p className={styles.textLabel}>{block.label}</p>}
             {block.text  && <p className={styles.overlayTitle}>{block.text}</p>}
           </div>
         )}
       </div>
 
-      {/* Floating card — rises up on scroll, overlaps bg bottom-right */}
+      {/* Floating card — left when reversed, right otherwise */}
       {block.media2 && (
         <motion.div
-          className={styles.overlayCard}
+          className={reverse ? styles.overlayCardLeft : styles.overlayCard}
           style={{ y: cardY, opacity: cardOpacity }}
         >
           <div className={styles.overlayCardInner}>
@@ -157,6 +155,9 @@ export default function CaseBlocks({ blocks }: CaseBlocksProps) {
 
           case 'overlay':
             return <OverlayBlock key={i} block={block} />
+
+          case 'overlay-reverse':
+            return <OverlayBlock key={i} block={block} reverse />
 
           default:
             return null
