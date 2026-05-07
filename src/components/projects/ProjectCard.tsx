@@ -20,7 +20,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       layout
     >
       <Link href={`/work/${project.slug}`} className={styles.link}>
-        {/* Image area */}
         <div className={styles.imageWrapper}>
           <Image
             src={project.imageUrl}
@@ -29,26 +28,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             style={{ objectFit: 'cover', objectPosition: 'center' }}
             sizes="(max-width: 809px) 100vw, 50vw"
             priority={index < 2}
+            className={styles.image}
           />
-
-          {/* Gradient vignette */}
-          <div className={styles.vignette} aria-hidden="true" />
-
-          {/* Inner border */}
-          <div className={styles.innerBorder} aria-hidden="true" />
-
-          {/* Hover overlay */}
-          <div className={styles.overlay} aria-hidden="true">
-            <div className={styles.overlayContent}>
-              <span className={styles.overlayLabel}>view project</span>
-              <svg className={styles.overlayArrow} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M7 17L17 7M17 7H7M17 7v10" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          </div>
         </div>
 
-        {/* Metadata */}
         <div className={styles.meta}>
           <h2 className={styles.title}>{project.title}</h2>
           <div className={styles.tags}>

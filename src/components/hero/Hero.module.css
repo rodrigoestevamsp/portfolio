@@ -1,64 +1,110 @@
 .hero {
-  min-height: 100vh;
+  padding: 144px 28px 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 120px 28px 80px;
+  gap: 16px;
   position: relative;
-  overflow: hidden;
 }
 
-.inner {
-  max-width: var(--container-content);
-  margin: 0 auto;
-  width: 100%;
+/* ─── Tagline (above name) ───────────────────────────────── */
+.tagline {
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: -0.02em;
+  line-height: 1.4em;
+  color: var(--color-text);
+  text-transform: lowercase;
+  max-width: 100%;
+  margin-bottom: 64px;
 }
 
-.line {
+.taglineLink {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-text-muted);
+  transition: text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+.taglineLink:hover {
+  text-decoration-color: var(--color-text);
+}
+
+/* ─── Name ───────────────────────────────────────────────── */
+.nameWrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: none;
+}
+
+.clipMask {
+  display: block;
+  clip-path: inset(-0.3em -0.5em -1.5em -0.5em);
+}
+
+.nameWord {
   display: block;
   font-size: var(--text-display-xl);
   font-weight: var(--font-weight-bld);
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
+  letter-spacing: -0.06em;
+  line-height: 1em;
   color: var(--color-text);
   text-transform: lowercase;
+  will-change: transform;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nameWrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-text-muted);
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.nameWrapper:hover::after {
   width: 100%;
 }
 
-.left  { text-align: left; }
-.right { text-align: right; }
-
-/* ─── Scroll hint ────────────────────────────────────────── */
-.scrollHint {
-  position: absolute;
-  bottom: 40px;
-  left: 28px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  font-weight: var(--font-weight-med);
-  letter-spacing: 0.08em;
+.nameWrapper:hover .nameWord {
   color: var(--color-text-muted);
-  text-transform: lowercase;
 }
 
-.scrollLine {
-  display: block;
-  width: 40px;
-  height: 1px;
-  background-color: var(--color-text-muted);
+/* ─── Cursor-follow image ────────────────────────────────── */
+.cursorImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+  translate: -50% -50%;
+  will-change: transform;
 }
 
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 809px) {
   .hero {
-    padding: 100px 16px 60px;
-    min-height: 100svh;
+    padding: 100px 16px 52px;
+    gap: 12px;
   }
 
-  .scrollHint {
-    left: 16px;
-    bottom: 28px;
+  .tagline {
+    margin-bottom: 40px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+  .cursorImage {
+    display: none;
   }
 }

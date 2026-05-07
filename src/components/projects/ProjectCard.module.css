@@ -1,130 +1,71 @@
 .card {
-  border-radius: var(--radius-card-lg);
-  overflow: hidden;
-  background-color: var(--color-surface);
+  background: transparent;
 }
 
 .link {
   display: block;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* ─── Image ──────────────────────────────────────────────── */
 .imageWrapper {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  border-radius: var(--radius-card-lg) var(--radius-card-lg) 0 0;
+  border-radius: var(--radius-card-lg);
 }
 
-/* Gradient vignette — bottom darkens into card bg */
-.vignette {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.8) 100%);
-  pointer-events: none;
-  z-index: 1;
+.image {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Subtle inset border */
-.innerBorder {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 2;
-  transition: opacity var(--duration-fast) var(--ease-out);
-}
-
-.card:hover .innerBorder {
-  opacity: 0.08;
-}
-
-/* Hover overlay */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 20, 20, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--duration-fast) var(--ease-out);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.card:hover .overlay {
-  opacity: 1;
-}
-
-.overlayContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  transform: translateY(8px);
-  transition: transform var(--duration-normal) var(--ease-out);
-}
-
-.card:hover .overlayContent {
-  transform: translateY(0);
-}
-
-.overlayLabel {
-  font-size: var(--text-body-sm);
-  font-weight: var(--font-weight-med);
-  letter-spacing: var(--tracking-tag);
-  color: var(--color-text);
-  text-transform: lowercase;
-}
-
-.overlayArrow {
-  width: 28px;
-  height: 28px;
-  color: var(--color-text);
+.card:hover .image {
+  transform: scale(1.04);
 }
 
 /* ─── Metadata ───────────────────────────────────────────── */
 .meta {
-  padding: 16px 20px 20px;
+  padding: 14px 0 0;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .title {
-  font-size: var(--text-body-lg);
+  font-size: clamp(15px, 1.4vw, 20px);
   font-weight: var(--font-weight-bld);
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-card);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   color: var(--color-text);
   text-transform: lowercase;
   transition: color var(--duration-fast) var(--ease-out);
+  flex: 1;
 }
 
 .card:hover .title {
-  color: var(--color-text-warm);
+  color: var(--color-text-muted);
 }
 
 .tags {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .category,
 .year {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: var(--font-weight-med);
-  letter-spacing: var(--tracking-tag);
+  letter-spacing: 0.04em;
   color: var(--color-text-muted);
   text-transform: lowercase;
 }
 
 .category::after {
   content: '·';
-  margin-left: 10px;
+  margin-left: 8px;
 }

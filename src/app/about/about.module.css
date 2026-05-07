@@ -1,101 +1,148 @@
+/* ── Split layout ──────────────────────────────────────────── */
 .page {
-  padding-top: 100px;
-  padding-bottom: var(--space-10);
+  display: grid;
+  grid-template-columns: 48fr 52fr;
+  min-height: 100vh;
+  padding-top: 64px; /* nav height */
 }
 
-.hero {
-  max-width: var(--container-content);
-  margin: 0 auto;
-  padding: var(--space-10) 28px var(--space-7);
-}
-
-.heading {
-  font-size: var(--text-display-lg);
-  font-weight: var(--font-weight-bld);
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
-  color: var(--color-text);
-  text-transform: lowercase;
-}
-
-.content {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 28px;
+/* ── Left: scrolling column ────────────────────────────────── */
+.left {
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);
+  min-height: calc(100vh - 64px);
+  padding: 80px 52px 60px;
+  border-right: 1px solid var(--color-overlay-sm);
 }
 
 .bio {
-  font-size: var(--text-heading-lg);
-  font-weight: var(--font-weight-med);
-  letter-spacing: var(--tracking-normal);
-  line-height: 1.4em;
-  color: var(--color-text);
-  text-transform: lowercase;
-}
-
-.details {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  padding-top: var(--space-7);
-  border-top: 1px solid var(--color-overlay-sm);
+  gap: 32px;
 }
 
-.detailGroup {
+.bioPara {
+  font-size: clamp(16px, 1.4vw, 22px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: -0.02em;
+  line-height: 1.55;
+  color: var(--color-text);
+  text-transform: lowercase;
+}
+
+/* ── Social links pinned to bottom ─────────────────────────── */
+.links {
   display: flex;
-  gap: var(--space-8);
-  align-items: baseline;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 60px;
 }
 
-.detailLabel {
-  font-size: var(--text-body-sm);
+.socialLink {
+  font-size: clamp(14px, 1.1vw, 18px);
   font-weight: var(--font-weight-med);
-  letter-spacing: var(--tracking-tag);
-  color: var(--color-text-muted);
-  text-transform: lowercase;
-  min-width: 130px;
-  flex-shrink: 0;
-}
-
-.detailValue {
-  font-size: var(--text-body-md);
-  font-weight: var(--font-weight-med);
-  letter-spacing: var(--tracking-tight);
+  letter-spacing: -0.02em;
   color: var(--color-text);
   text-transform: lowercase;
-}
-
-.emailLink {
-  font-size: var(--text-body-md);
-  font-weight: var(--font-weight-med);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-text);
-  text-transform: none;
+  text-decoration: none;
+  width: fit-content;
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.emailLink:hover {
+.socialLink:hover {
   color: var(--color-text-muted);
 }
 
+/* ── Right: sticky portrait panel ──────────────────────────── */
+.right {
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.nameBlock {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.name {
+  font-size: clamp(15px, 1.2vw, 20px);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  text-transform: lowercase;
+}
+
+.role {
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+}
+
+/* ── Portrait image fills panel ─────────────────────────────── */
+.portrait {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ── Statement text at bottom ──────────────────────────────── */
+.statement {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 48px 32px 40px;
+  font-size: clamp(22px, 2.8vw, 44px);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--color-text);
+  text-transform: lowercase;
+  background: linear-gradient(to top, rgba(20, 20, 20, 0.88) 60%, transparent 100%);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 809px) {
-  .hero {
-    padding: var(--space-8) 16px var(--space-5);
+  .page {
+    grid-template-columns: 1fr;
+    padding-top: 64px;
   }
 
-  .content {
-    padding: 0 16px;
+  .right {
+    position: relative;
+    top: 0;
+    height: 70vw;
+    min-height: 320px;
   }
 
-  .detailGroup {
-    flex-direction: column;
-    gap: var(--space-1);
+  .left {
+    min-height: unset;
+    padding: 40px 20px 52px;
+    border-right: none;
+    border-top: 1px solid var(--color-overlay-sm);
   }
 
-  .detailLabel {
-    min-width: unset;
+  .statement {
+    font-size: clamp(18px, 5vw, 28px);
+    padding: 32px 20px 28px;
+  }
+
+  .nameBlock {
+    top: 20px;
+    left: 20px;
   }
 }

@@ -1,4 +1,4 @@
-export const CATEGORIES = ['all', 'branding', 'identity', 'packaging', 'digital', 'print'] as const
+export const CATEGORIES = ['all', 'digital', 'branding'] as const
 
 export const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const
 export const EASE_IN_OUT = [0.45, 0, 0.55, 1] as const

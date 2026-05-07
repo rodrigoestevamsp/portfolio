@@ -5,7 +5,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--grid-gap);
+  column-gap: var(--grid-gap);
+  row-gap: calc(var(--grid-gap) + 24px);
   max-width: var(--container-content);
   margin: 0 auto;
   padding: 0 28px;

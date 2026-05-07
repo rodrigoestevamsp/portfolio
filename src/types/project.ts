@@ -1,4 +1,4 @@
-export type ProjectCategory = 'branding' | 'packaging' | 'print' | 'identity' | 'digital'
+export type ProjectCategory = 'branding' | 'digital'
 
 export interface Project {
   slug: string
