@@ -74,7 +74,7 @@ export default function AboutPage() {
 
         <div className={styles.portrait}>
           <Image
-            src="/images/profile.jpg"
+            src="/images/rodrigoabout.jpg"
             alt="Rodrigo Estevam"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center top' }}
