@@ -8,7 +8,7 @@ export default function ContactPage() {
     <main className={styles.page}>
       <div className={styles.hero}>
         <ScrollReveal variant="dramatic">
-          <h1 className={styles.heading}>start a project</h1>
+          <h1 className={styles.heading}>Say hi</h1>
         </ScrollReveal>
         <ScrollReveal variant="standard" delay={0.2}>
           <p className={styles.subheading}>

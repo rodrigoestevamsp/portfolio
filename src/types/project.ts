@@ -7,6 +7,7 @@ export interface Project {
   category: ProjectCategory
   year: number
   imageUrl: string
+  caseImageUrl?: string
   description: string
   featured?: boolean
   mediaType?: ProjectMediaType

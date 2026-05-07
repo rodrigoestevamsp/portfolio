@@ -36,7 +36,7 @@ export default function Nav() {
             </Link>
           ))}
           <Link href="/contact" className={styles.ctaButton}>
-            start a project
+            Say hi
           </Link>
         </div>
 
@@ -80,7 +80,7 @@ export default function Nav() {
                 className={styles.mobileCtaButton}
                 onClick={() => setMenuOpen(false)}
               >
-                start a project
+                Say hi
               </Link>
             </div>
           </motion.div>

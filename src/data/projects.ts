@@ -7,6 +7,7 @@ export const projects: Project[] = [
     category: 'branding',
     year: 2024,
     imageUrl: '/images/projects/decathlon-brand.png',
+    caseImageUrl: '/images/projects/case-placeholder-true-agency.png',
     description: 'a full rebrand of decathlon\'s visual identity, exploring new typographic systems and color languages across all touchpoints.',
     featured: true,
   },
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     category: 'digital',
     year: 2024,
     imageUrl: '/images/projects/reframe-pixelate.png',
+    caseImageUrl: '/images/projects/case-placeholder-true-agency.png',
     description: 'experimental visual tool for image manipulation, exploring pixel art aesthetics in contemporary design contexts.',
   },
   {
@@ -24,6 +26,7 @@ export const projects: Project[] = [
     category: 'digital',
     year: 2023,
     imageUrl: '/images/projects/reframe-wood-shade.png',
+    caseImageUrl: '/images/projects/case-placeholder-true-agency.png',
     description: 'material-driven design system inspired by natural wood textures and organic shadow play.',
   },
   {
@@ -32,6 +35,7 @@ export const projects: Project[] = [
     category: 'digital',
     year: 2023,
     imageUrl: '/images/projects/reframe-zoom-blur.png',
+    caseImageUrl: '/images/projects/case-placeholder-true-agency.png',
     description: 'motion-inspired series exploring zoom blur as a visual language for speed and transformation.',
   },
   {
@@ -40,6 +44,7 @@ export const projects: Project[] = [
     category: 'branding',
     year: 2025,
     imageUrl: '/images/projects/banner.png',
+    caseImageUrl: '/images/projects/case-placeholder-true-agency.png',
     description: 'campaign identity for decathlon\'s seasonal sport activation, bridging performance and everyday accessibility.',
     featured: true,
   },
@@ -49,6 +54,7 @@ export const projects: Project[] = [
     category: 'branding',
     year: 2024,
     imageUrl: '/images/projects/mask-group.png',
+    caseImageUrl: '/images/projects/case-placeholder-true-agency.png',
     description: 'design system exploration merging geometric structure with typographic expressiveness.',
   },
 ]

@@ -23,7 +23,7 @@ export default function Footer() {
         </ScrollReveal>
         <ScrollReveal variant="subtle" delay={0.3}>
           <Link href="/contact" className={styles.ctaButton}>
-            start a project →
+            Say hi
           </Link>
         </ScrollReveal>
       </div>

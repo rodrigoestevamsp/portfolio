@@ -34,11 +34,31 @@ export default function CasePageTemplate({ project, nextProject }: CasePageTempl
         </div>
       </ScrollReveal>
 
-      <div className={styles.content}>
-        <ScrollReveal variant="subtle" delay={0.08}>
-          <p className={styles.description}>{project.description}</p>
+      <section className={styles.caseIntro}>
+        <ScrollReveal variant="subtle">
+          <div className={styles.caseTextColumn}>
+            <p className={styles.caseEyebrow}>{project.category}</p>
+            <h2 className={styles.caseLead}>{project.title}.</h2>
+            <p className={styles.caseBody}>
+              <span className={styles.caseDot} aria-hidden>
+                ●
+              </span>
+              {project.description}
+            </p>
+          </div>
         </ScrollReveal>
-      </div>
+        <ScrollReveal variant="subtle" delay={0.08}>
+          <div className={styles.caseMediaColumn}>
+            <div className={styles.caseMediaFrame}>
+              <MediaRenderer
+                imageUrl={project.caseImageUrl ?? project.imageUrl}
+                alt={`${project.title} detail`}
+                sizes="(max-width: 809px) 100vw, 48vw"
+              />
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
 
       <div className={styles.nextProject}>
         <ScrollReveal variant="subtle">
