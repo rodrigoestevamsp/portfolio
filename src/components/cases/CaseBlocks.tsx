@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import MediaRenderer from '@/components/media/MediaRenderer'
+import KeyProblems from '@/components/cases/KeyProblems'
 import type { CaseBlock, CaseBlockMedia } from '@/types/project'
 import { EASE_OUT } from '@/lib/constants'
 import styles from './CaseBlocks.module.css'
@@ -158,6 +159,11 @@ export default function CaseBlocks({ blocks }: CaseBlocksProps) {
 
           case 'overlay-reverse':
             return <OverlayBlock key={i} block={block} reverse />
+
+          case 'key-problems':
+            return block.columns?.length ? (
+              <KeyProblems key={i} label={block.label} columns={block.columns} />
+            ) : null
 
           default:
             return null

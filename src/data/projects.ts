@@ -20,6 +20,39 @@ export const projects: Project[] = [
         text: 'redefining a global sports brand through type, color, and system thinking.',
       },
       {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'brand',
+            title: 'brand fragmentation.',
+            items: [
+              'inconsistent identity across markets',
+              'no unified visual language',
+              'disconnected touchpoints',
+            ],
+          },
+          {
+            icon: 'digital',
+            title: 'digital experience.',
+            items: [
+              'outdated ui patterns across platforms',
+              'no scalable design system',
+              'poor mobile performance',
+            ],
+          },
+          {
+            icon: 'scale',
+            title: 'global scale.',
+            items: [
+              'identity failing at large format',
+              'multi-language visual inconsistency',
+              'localisation without coherence',
+            ],
+          },
+        ],
+      },
+      {
         layout: 'overlay',
         label: 'in context',
         text: 'a brand system that performs at every scale.',

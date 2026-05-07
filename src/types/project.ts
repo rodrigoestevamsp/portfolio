@@ -1,6 +1,12 @@
 export type ProjectCategory = 'branding' | 'digital'
 export type ProjectMediaType = 'gif' | 'video'
-export type CaseBlockLayout = 'full' | 'split' | 'text' | 'feature' | 'feature-reverse' | 'overlay' | 'overlay-reverse'
+export type CaseBlockLayout = 'full' | 'split' | 'text' | 'feature' | 'feature-reverse' | 'overlay' | 'overlay-reverse' | 'key-problems'
+
+export interface CaseBlockColumn {
+  icon: 'brand' | 'digital' | 'scale' | 'strategy' | 'system' | 'motion'
+  title: string
+  items: string[]
+}
 
 export interface CaseBlockMedia {
   imageUrl: string        // static image or poster for video/gif
@@ -11,10 +17,11 @@ export interface CaseBlockMedia {
 
 export interface CaseBlock {
   layout: CaseBlockLayout
-  media?: CaseBlockMedia   // primary media
-  media2?: CaseBlockMedia  // second slot (split layout)
-  text?: string            // statement or feature body text
-  label?: string           // small eyebrow label
+  media?: CaseBlockMedia
+  media2?: CaseBlockMedia
+  text?: string
+  label?: string
+  columns?: CaseBlockColumn[]  // key-problems layout
 }
 
 export interface Project {
