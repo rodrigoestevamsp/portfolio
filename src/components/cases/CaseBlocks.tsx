@@ -46,12 +46,12 @@ function OverlayBlock({ block }: { block: CaseBlock }) {
     offset: ['start end', 'end start'],
   })
 
-  // Background drifts upward slower than page scroll — classic parallax
+  // Background drifts upward slowly — subtle parallax
   const bgY = useTransform(scrollYProgress, [0, 1], ['0px', '-80px'])
 
-  // Card rises in from below as section enters viewport
-  const cardY      = useTransform(scrollYProgress, [0.05, 0.5],  ['80px', '0px'])
-  const cardOpacity = useTransform(scrollYProgress, [0.05, 0.28], [0, 1])
+  // Card travels a much larger distance — intense parallax, feels fast vs bg
+  const cardY       = useTransform(scrollYProgress, [0, 1],    ['140px', '-220px'])
+  const cardOpacity = useTransform(scrollYProgress, [0.05, 0.25], [0, 1])
 
   return (
     <div ref={ref} className={styles.overlayBlock}>
