@@ -1,0 +1,101 @@
+.section {
+  width: 100%;
+  background: var(--color-bg);
+  padding: clamp(80px, 10vw, 160px) clamp(24px, 5vw, 80px) clamp(80px, 10vw, 160px);
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+.heading {
+  font-size: clamp(52px, 9vw, 144px);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--color-text);
+  text-transform: lowercase;
+  margin-bottom: clamp(48px, 6vw, 96px);
+}
+
+/* ── Entry list ───────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Single row ───────────────────────────────────────────── */
+.row {
+  display: grid;
+  grid-template-columns: 30fr 38fr 16fr;
+  align-items: center;
+  gap: clamp(20px, 4vw, 60px);
+  padding: clamp(28px, 3.5vw, 48px) 0;
+  border-top: 1px solid var(--color-overlay-sm);
+}
+
+.dividerBottom {
+  border-top: 1px solid var(--color-overlay-sm);
+}
+
+/* ── Left column: company + role ──────────────────────────── */
+.colLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.company {
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-text);
+  text-transform: lowercase;
+}
+
+.role {
+  font-size: clamp(12px, 1vw, 16px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+}
+
+/* ── Center: description ──────────────────────────────────── */
+.description {
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-transform: lowercase;
+}
+
+/* ── Right: years ─────────────────────────────────────────── */
+.years {
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  text-transform: lowercase;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 809px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: clamp(24px, 6vw, 36px) 0;
+  }
+
+  .years {
+    text-align: left;
+    font-size: clamp(14px, 4vw, 20px);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-med);
+  }
+
+  .description {
+    display: none;
+  }
+}
