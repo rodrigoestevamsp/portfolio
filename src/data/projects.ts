@@ -1,6 +1,8 @@
 import { Project } from '@/types/project'
 
 export const projects: Project[] = [
+
+  /* ── Decathlon — Brand Identity ───────────────────────────── */
   {
     slug: 'decathlon-brand-identity',
     title: 'decathlon brand identity',
@@ -85,6 +87,266 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  /* ── Decathlon — Sport Campaign ───────────────────────────── */
+  {
+    slug: 'decathlon-campaign',
+    title: 'decathlon — sport campaign',
+    category: 'branding',
+    year: 2025,
+    imageUrl: '/images/projects/banner.png',
+    description: 'campaign identity for decathlon\'s seasonal sport activation, bridging performance and everyday accessibility.',
+    featured: true,
+    blocks: [
+      {
+        layout: 'full',
+        media: { imageUrl: '/images/projects/banner.png', alt: 'decathlon sport campaign' },
+      },
+      {
+        layout: 'text',
+        label: 'campaign',
+        text: 'sport for everyone — a campaign that speaks to performance and accessibility at once.',
+      },
+      {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'strategy',
+            title: 'audience reach.',
+            items: [
+              'campaign not resonating with casual athletes',
+              'gap between performance and lifestyle messaging',
+              'low seasonal activation recall',
+            ],
+          },
+          {
+            icon: 'motion',
+            title: 'visual energy.',
+            items: [
+              'static assets lacking urgency',
+              'no motion language for digital channels',
+              'inconsistent art direction across formats',
+            ],
+          },
+          {
+            icon: 'system',
+            title: 'channel coherence.',
+            items: [
+              'social, ooh and in-store disconnected',
+              'no shared visual rhythm across media',
+              'localised versions drifting from master',
+            ],
+          },
+        ],
+      },
+      {
+        layout: 'overlay',
+        label: 'activation',
+        text: 'seasonal energy translated into bold visuals across every channel.',
+        media:  { imageUrl: '/images/projects/banner.png', alt: 'campaign background' },
+        media2: { imageUrl: '/images/projects/decathlon-brand.png', alt: 'campaign detail' },
+      },
+      {
+        layout: 'split',
+        media:  { imageUrl: '/images/projects/banner.png', alt: 'campaign visual a' },
+        media2: { imageUrl: '/images/projects/mask-group.png', alt: 'campaign visual b' },
+      },
+      {
+        layout: 'feature',
+        label: 'motion',
+        text: 'a visual language built for speed — from billboard to reel in one system.',
+        media: { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'motion identity' },
+      },
+      {
+        layout: 'feature-reverse',
+        label: 'in-store',
+        text: 'the campaign lives on every surface — physical and digital, seamlessly.',
+        media: { imageUrl: '/images/projects/banner.png', alt: 'in-store application' },
+      },
+      {
+        layout: 'overlay-reverse',
+        label: 'impact',
+        text: 'one idea, every channel, every athlete.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'impact background' },
+        media2: { imageUrl: '/images/projects/banner.png',             alt: 'impact detail' },
+      },
+    ],
+  },
+
+  /* ── Brand Project (placeholder — update slug, title, images) */
+  {
+    slug: 'brand-project',
+    title: 'brand project',
+    category: 'branding',
+    year: 2024,
+    imageUrl: '/images/projects/mask-group.png',
+    description: 'a comprehensive brand identity built from the ground up — strategy, visual language, and system.',
+    featured: true,
+    blocks: [
+      {
+        layout: 'full',
+        media: { imageUrl: '/images/projects/mask-group.png', alt: 'brand project hero' },
+      },
+      {
+        layout: 'text',
+        label: 'challenge',
+        text: 'building a brand that earns trust from day one.',
+      },
+      {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'brand',
+            title: 'no identity.',
+            items: [
+              'starting from zero — no brand equity',
+              'undefined tone of voice',
+              'no visual direction',
+            ],
+          },
+          {
+            icon: 'strategy',
+            title: 'positioning.',
+            items: [
+              'unclear competitive space',
+              'audience not yet defined',
+              'no differentiation strategy',
+            ],
+          },
+          {
+            icon: 'system',
+            title: 'scalability.',
+            items: [
+              'brand must work across all formats',
+              'team needs a usable design system',
+              'future product lines to accommodate',
+            ],
+          },
+        ],
+      },
+      {
+        layout: 'overlay',
+        label: 'direction',
+        text: 'a brand that communicates clarity and ambition at every touchpoint.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'brand direction background' },
+        media2: { imageUrl: '/images/projects/mask-group.png',         alt: 'brand detail' },
+      },
+      {
+        layout: 'split',
+        media:  { imageUrl: '/images/projects/mask-group.png',       alt: 'brand detail a' },
+        media2: { imageUrl: '/images/projects/decathlon-brand.png',  alt: 'brand detail b' },
+      },
+      {
+        layout: 'feature',
+        label: 'identity',
+        text: 'every element earns its place — type, color, form, and motion in one system.',
+        media: { imageUrl: '/images/projects/mask-group.png', alt: 'identity system' },
+      },
+      {
+        layout: 'feature-reverse',
+        label: 'applications',
+        text: 'the system tested across every format — digital, print, and space.',
+        media: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'brand applications' },
+      },
+      {
+        layout: 'overlay-reverse',
+        label: 'launch',
+        text: 'a brand ready to grow.',
+        media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'launch background' },
+        media2: { imageUrl: '/images/projects/mask-group.png',        alt: 'launch detail' },
+      },
+    ],
+  },
+
+  /* ── Geekie ───────────────────────────────────────────────── */
+  {
+    slug: 'geekie',
+    title: 'geekie',
+    category: 'digital',
+    year: 2023,
+    imageUrl: '/images/projects/reframe-pixelate.png',
+    description: 'product design for a leading brazilian edtech platform — making personalised learning accessible to millions of students.',
+    featured: true,
+    blocks: [
+      {
+        layout: 'full',
+        media: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'geekie platform' },
+      },
+      {
+        layout: 'text',
+        label: 'context',
+        text: 'designing for education means designing for every student, everywhere.',
+      },
+      {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'digital',
+            title: 'product complexity.',
+            items: [
+              'fragmented feature set with no clear ux flow',
+              'inconsistent ui across web and mobile',
+              'high cognitive load for students',
+            ],
+          },
+          {
+            icon: 'scale',
+            title: 'scale & access.',
+            items: [
+              'millions of concurrent users',
+              'low-bandwidth environments',
+              'wide device and os fragmentation',
+            ],
+          },
+          {
+            icon: 'system',
+            title: 'design system.',
+            items: [
+              'no unified component library',
+              'design and engineering out of sync',
+              'slow iteration cycles',
+            ],
+          },
+        ],
+      },
+      {
+        layout: 'overlay',
+        label: 'approach',
+        text: 'a product that feels as personal as a great teacher.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'product background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',   alt: 'product detail' },
+      },
+      {
+        layout: 'split',
+        media:  { imageUrl: '/images/projects/reframe-pixelate.png',   alt: 'geekie screen a' },
+        media2: { imageUrl: '/images/projects/reframe-zoom-blur.png',  alt: 'geekie screen b' },
+      },
+      {
+        layout: 'feature',
+        label: 'design system',
+        text: 'a shared component library that let design and engineering ship faster.',
+        media: { imageUrl: '/images/projects/mask-group.png', alt: 'design system' },
+      },
+      {
+        layout: 'feature-reverse',
+        label: 'personalisation',
+        text: 'adaptive learning paths designed to feel intuitive, not algorithmic.',
+        media: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'personalisation ui' },
+      },
+      {
+        layout: 'overlay-reverse',
+        label: 'impact',
+        text: 'millions of students. one coherent experience.',
+        media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'impact background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'impact detail' },
+      },
+    ],
+  },
+
+  /* ── Reframe — Pixelate ───────────────────────────────────── */
   {
     slug: 'reframe-pixelate',
     title: 'reframe — pixelate',
@@ -115,6 +377,8 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  /* ── Reframe — Wood Shade ─────────────────────────────────── */
   {
     slug: 'reframe-wood-shade',
     title: 'reframe — wood shade',
@@ -145,6 +409,8 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  /* ── Reframe — Zoom Blur ──────────────────────────────────── */
   {
     slug: 'reframe-zoom-blur',
     title: 'reframe — zoom blur',
@@ -175,65 +441,5 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: 'decathlon-campaign',
-    title: 'decathlon — sport campaign',
-    category: 'branding',
-    year: 2025,
-    imageUrl: '/images/projects/banner.png',
-    description: 'campaign identity for decathlon\'s seasonal sport activation, bridging performance and everyday accessibility.',
-    featured: true,
-    blocks: [
-      {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/banner.png', alt: 'decathlon campaign' },
-      },
-      {
-        layout: 'text',
-        label: 'campaign',
-        text: 'sport for everyone — a campaign that speaks to performance and accessibility at once.',
-      },
-      {
-        layout: 'split',
-        media:  { imageUrl: '/images/projects/banner.png', alt: 'campaign visual a' },
-        media2: { imageUrl: '/images/projects/decathlon-brand.png', alt: 'campaign visual b' },
-      },
-      {
-        layout: 'feature',
-        label: 'activation',
-        text: 'seasonal energy translated into bold visuals across every channel.',
-        media: { imageUrl: '/images/projects/banner.png', alt: 'activation detail' },
-      },
-    ],
-  },
-  {
-    slug: 'visual-systems',
-    title: 'visual systems',
-    category: 'branding',
-    year: 2024,
-    imageUrl: '/images/projects/mask-group.png',
-    description: 'design system exploration merging geometric structure with typographic expressiveness.',
-    blocks: [
-      {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/mask-group.png', alt: 'visual systems' },
-      },
-      {
-        layout: 'split',
-        media:  { imageUrl: '/images/projects/mask-group.png', alt: 'system detail a' },
-        media2: { imageUrl: '/images/projects/decathlon-brand.png', alt: 'system detail b' },
-      },
-      {
-        layout: 'text',
-        label: 'structure',
-        text: 'geometry and typography as equal partners in a unified design language.',
-      },
-      {
-        layout: 'feature',
-        label: 'expression',
-        text: 'rigid grids, expressive type — structure that sets creativity free.',
-        media: { imageUrl: '/images/projects/mask-group.png', alt: 'expression detail' },
-      },
-    ],
-  },
+
 ]
