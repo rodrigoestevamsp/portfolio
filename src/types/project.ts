@@ -1,6 +1,11 @@
 export type ProjectCategory = 'branding' | 'digital'
 export type ProjectMediaType = 'gif' | 'video'
-export type CaseBlockLayout = 'full' | 'split' | 'text' | 'feature' | 'feature-reverse' | 'overlay' | 'overlay-reverse' | 'key-problems'
+export type CaseBlockLayout = 'full' | 'split' | 'text' | 'feature' | 'feature-reverse' | 'overlay' | 'overlay-reverse' | 'key-problems' | 'results'
+
+export interface CaseBlockStat {
+  value: string        // e.g. "30+ sites", "12.58%"
+  description: string  // short explanation on the right
+}
 
 export interface CaseBlockColumn {
   icon: 'brand' | 'digital' | 'scale' | 'strategy' | 'system' | 'motion'
@@ -21,7 +26,8 @@ export interface CaseBlock {
   media2?: CaseBlockMedia
   text?: string
   label?: string
-  columns?: CaseBlockColumn[]  // key-problems layout
+  columns?: CaseBlockColumn[]
+  stats?: CaseBlockStat[]
 }
 
 export interface Project {

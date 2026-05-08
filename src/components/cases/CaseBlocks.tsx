@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import MediaRenderer from '@/components/media/MediaRenderer'
 import KeyProblems from '@/components/cases/KeyProblems'
+import Results from '@/components/cases/Results'
 import type { CaseBlock, CaseBlockMedia } from '@/types/project'
 import { EASE_OUT } from '@/lib/constants'
 import styles from './CaseBlocks.module.css'
@@ -163,6 +164,11 @@ export default function CaseBlocks({ blocks }: CaseBlocksProps) {
           case 'key-problems':
             return block.columns?.length ? (
               <KeyProblems key={i} label={block.label} columns={block.columns} />
+            ) : null
+
+          case 'results':
+            return block.stats?.length ? (
+              <Results key={i} label={block.label} stats={block.stats} />
             ) : null
 
           default:

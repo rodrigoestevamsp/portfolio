@@ -1,0 +1,71 @@
+.section {
+  width: 100%;
+  background: #110633;
+  padding: clamp(48px, 6vw, 96px) clamp(24px, 5vw, 80px) clamp(64px, 8vw, 128px);
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.header {
+  padding-bottom: clamp(20px, 2.5vw, 36px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: lowercase;
+}
+
+/* ── Stat rows ────────────────────────────────────────────── */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  gap: clamp(24px, 4vw, 80px);
+  padding: clamp(24px, 3.5vw, 48px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ── Giant metric ─────────────────────────────────────────── */
+.value {
+  font-size: clamp(56px, 10vw, 160px);
+  font-weight: var(--font-weight-bld);
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: #ffffff;
+  text-transform: lowercase;
+}
+
+/* ── Description ──────────────────────────────────────────── */
+.description {
+  font-size: clamp(12px, 0.9vw, 15px);
+  font-weight: var(--font-weight-reg);
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: lowercase;
+  max-width: 22ch;
+  text-align: right;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 809px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .description {
+    text-align: left;
+    max-width: 100%;
+  }
+}

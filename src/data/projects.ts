@@ -85,6 +85,15 @@ export const projects: Project[] = [
         media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'digital background' },
         media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'digital detail' },
       },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '40+ markets', description: 'brand system rolled out across europe and beyond.' },
+          { value: '3× faster', description: 'design production time after system implementation.' },
+          { value: '98% adoption', description: 'of new identity across all decathlon touchpoints.' },
+        ],
+      },
     ],
   },
 
@@ -170,6 +179,15 @@ export const projects: Project[] = [
         text: 'one idea, every channel, every athlete.',
         media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'impact background' },
         media2: { imageUrl: '/images/projects/banner.png',             alt: 'impact detail' },
+      },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '+24%', description: 'increase in campaign recall across key markets.' },
+          { value: '12M+', description: 'impressions across digital and out-of-home channels.' },
+          { value: '2× roas', description: 'return on ad spend versus previous seasonal campaign.' },
+        ],
       },
     ],
   },
@@ -257,6 +275,15 @@ export const projects: Project[] = [
         media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'launch background' },
         media2: { imageUrl: '/images/projects/mask-group.png',        alt: 'launch detail' },
       },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '01', description: 'brand built from zero to market-ready in 8 weeks.' },
+          { value: '+40%', description: 'increase in inbound leads in the first quarter post-launch.' },
+          { value: '100%', description: 'design system adoption across product and marketing teams.' },
+        ],
+      },
     ],
   },
 
@@ -342,6 +369,15 @@ export const projects: Project[] = [
         text: 'millions of students. one coherent experience.',
         media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'impact background' },
         media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'impact detail' },
+      },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '2M+', description: 'students using the redesigned platform.' },
+          { value: '+26%', description: 'increase in average session engagement time.' },
+          { value: '4× faster', description: 'design-to-engineering handoff with the new component library.' },
+        ],
       },
     ],
   },
