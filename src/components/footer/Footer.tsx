@@ -22,7 +22,7 @@ export default function Footer() {
         viewport={{ once: true, margin: '0px' }}
         transition={{ duration: 0.7, ease: EASE_OUT }}
       >
-        <p className={styles.ctaEyebrow}>let&apos;s create something</p>
+        <p className={styles.ctaEyebrow}>let&apos;s work</p>
         <h2 className={styles.ctaHeading}>
           <span className={styles.ctaLeft}>together.</span>
         </h2>
