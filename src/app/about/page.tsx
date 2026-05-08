@@ -65,16 +65,6 @@ export default function AboutPage() {
 
         {/* Right: sticky portrait panel */}
         <div className={styles.right}>
-          <motion.div
-            className={styles.nameBlock}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: EASE_OUT, delay: 0.1 }}
-          >
-            <span className={styles.name}>rodrigo estevam</span>
-            <span className={styles.role}>product design manager</span>
-          </motion.div>
-
           <div className={styles.portrait}>
             <Image
               src="/images/rodrigoabout.jpg"
