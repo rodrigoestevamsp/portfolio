@@ -78,18 +78,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* ── Tagline — below the name ── */}
-      <motion.p
-        className={styles.tagline}
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-        transition={{ duration: 0.6, ease: EASE_OUT, delay: 0.5 }}
-      >
-        i turn design into growth — and i&apos;ve been doing it for 20+ years.
-        leading teams, shaping digital experiences, and finding that sweet spot where
-        people, strategy, and design click together to build something that lasts.
-      </motion.p>
-
     </section>
   )
 }
