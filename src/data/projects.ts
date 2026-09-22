@@ -5,11 +5,11 @@ export const projects: Project[] = [
   /* ── Decathlon — Brand Identity ───────────────────────────── */
   {
     slug: 'decathlon-brand-identity',
-    title: 'decathlon brand identity',
+    title: 'Revamp Decathlons Digital Experience',
     category: 'branding',
     year: 2024,
     imageUrl: '/images/projects/decathlon-brand.png',
-    description: 'a full rebrand of decathlon\'s visual identity, exploring new typographic systems and color languages across all touchpoints.',
+    description: 'We set out on a new challenge to complete reboot our app in South America.',
     featured: true,
     blocks: [
       {
@@ -401,15 +401,77 @@ export const projects: Project[] = [
         text: 'pixel art as a contemporary visual language — not retro, but radically present.',
       },
       {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'digital',
+            title: 'image fidelity.',
+            items: [
+              'lossy compression destroying pixel intent',
+              'no tool preserving pixel-perfect aesthetics',
+              'inconsistent rendering across screens',
+            ],
+          },
+          {
+            icon: 'system',
+            title: 'workflow friction.',
+            items: [
+              'manual pixel editing is slow and brittle',
+              'no real-time preview of pixelation output',
+              'no scalable export pipeline',
+            ],
+          },
+          {
+            icon: 'brand',
+            title: 'aesthetic language.',
+            items: [
+              'pixel art seen as retro rather than contemporary',
+              'no design system built around the aesthetic',
+              'lack of creative constraint tooling',
+            ],
+          },
+        ],
+      },
+      {
+        layout: 'overlay',
+        label: 'in context',
+        text: 'an interface that turns any image into something entirely new.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'context background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',   alt: 'tool detail' },
+      },
+      {
         layout: 'split',
-        media:  { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'pixelate detail a' },
+        media:  { imageUrl: '/images/projects/reframe-pixelate.png',   alt: 'pixelate detail a' },
         media2: { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'pixelate detail b' },
+      },
+      {
+        layout: 'feature',
+        label: 'output',
+        text: 'every image becomes a grid — deliberate, structured, and visually charged.',
+        media: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'pixelate output' },
       },
       {
         layout: 'feature-reverse',
         label: 'tool',
         text: 'an interface that turns any image into something entirely new.',
         media: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'tool interface' },
+      },
+      {
+        layout: 'overlay-reverse',
+        label: 'system',
+        text: 'pixel art as a scalable, contemporary visual system.',
+        media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'system background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'system detail' },
+      },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '10×', description: 'faster pixelation workflow versus manual editing.' },
+          { value: '40+', description: 'export formats supported across web and print.' },
+          { value: '100%', description: 'pixel-perfect output at any scale.' },
+        ],
       },
     ],
   },
@@ -428,20 +490,82 @@ export const projects: Project[] = [
         media: { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'reframe wood shade' },
       },
       {
-        layout: 'split',
-        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'wood texture detail' },
-        media2: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'material contrast' },
-      },
-      {
         layout: 'text',
         label: 'material',
         text: 'nature as the starting point — grain, shadow, and warmth as design principles.',
+      },
+      {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'brand',
+            title: 'texture in digital.',
+            items: [
+              'organic materials feel flat on screen',
+              'no system for translating tactile into visual',
+              'warmth lost in translation to digital surfaces',
+            ],
+          },
+          {
+            icon: 'system',
+            title: 'design consistency.',
+            items: [
+              'wood textures applied ad-hoc, no system',
+              'inconsistent grain direction and tone',
+              'no scalable material token library',
+            ],
+          },
+          {
+            icon: 'scale',
+            title: 'shadow language.',
+            items: [
+              'shadow depth undefined across components',
+              'no relationship between light source and material',
+              'harsh digital shadows breaking organic feel',
+            ],
+          },
+        ],
+      },
+      {
+        layout: 'overlay',
+        label: 'direction',
+        text: 'organic textures translated into a rigorous, scalable design language.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'material background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',   alt: 'material detail' },
+      },
+      {
+        layout: 'split',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'wood texture detail' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',   alt: 'material contrast' },
       },
       {
         layout: 'feature',
         label: 'system',
         text: 'organic textures translated into a rigorous, scalable design language.',
         media: { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'system detail' },
+      },
+      {
+        layout: 'feature-reverse',
+        label: 'shadow',
+        text: 'light and depth defined by material — not convention.',
+        media: { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'shadow system' },
+      },
+      {
+        layout: 'overlay-reverse',
+        label: 'application',
+        text: 'warmth at every scale — from component to campaign.',
+        media:  { imageUrl: '/images/projects/reframe-zoom-blur.png',  alt: 'application background' },
+        media2: { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'application detail' },
+      },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '3×', description: 'faster material application with the token system.' },
+          { value: '60+', description: 'components built on the wood shade system.' },
+          { value: '100%', description: 'design–dev consistency across all surfaces.' },
+        ],
       },
     ],
   },
@@ -465,15 +589,77 @@ export const projects: Project[] = [
         text: 'speed, energy, and transformation captured in a single frame.',
       },
       {
+        layout: 'key-problems',
+        label: 'key problems',
+        columns: [
+          {
+            icon: 'motion',
+            title: 'static design.',
+            items: [
+              'still images failing to convey speed',
+              'motion missing from brand visual language',
+              'no technique for energy in a single frame',
+            ],
+          },
+          {
+            icon: 'digital',
+            title: 'blur as tool.',
+            items: [
+              'blur seen as error, not compositional device',
+              'no standardised zoom blur workflow',
+              'inconsistent depth of field across assets',
+            ],
+          },
+          {
+            icon: 'system',
+            title: 'visual system.',
+            items: [
+              'no motion language across campaign assets',
+              'speed cues disconnected between formats',
+              'art direction unclear on blur intensity',
+            ],
+          },
+        ],
+      },
+      {
+        layout: 'overlay',
+        label: 'in motion',
+        text: 'blur as a compositional tool — not a flaw, but the whole point.',
+        media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'motion background' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'motion detail' },
+      },
+      {
         layout: 'split',
         media:  { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'zoom blur detail a' },
-        media2: { imageUrl: '/images/projects/reframe-pixelate.png', alt: 'zoom blur detail b' },
+        media2: { imageUrl: '/images/projects/reframe-pixelate.png',  alt: 'zoom blur detail b' },
+      },
+      {
+        layout: 'feature',
+        label: 'technique',
+        text: 'speed, energy, and transformation — all captured in a single frame.',
+        media: { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'technique detail' },
       },
       {
         layout: 'feature-reverse',
-        label: 'technique',
-        text: 'blur as a compositional tool — not a flaw, but the whole point.',
-        media: { imageUrl: '/images/projects/reframe-zoom-blur.png', alt: 'technique detail' },
+        label: 'system',
+        text: 'a motion language that scales from social to billboard.',
+        media: { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'motion system' },
+      },
+      {
+        layout: 'overlay-reverse',
+        label: 'output',
+        text: 'one technique — infinite applications.',
+        media:  { imageUrl: '/images/projects/reframe-wood-shade.png', alt: 'output background' },
+        media2: { imageUrl: '/images/projects/reframe-zoom-blur.png',  alt: 'output detail' },
+      },
+      {
+        layout: 'results',
+        label: 'the results.',
+        stats: [
+          { value: '5×', description: 'engagement uplift on motion assets versus static.' },
+          { value: '20+', description: 'campaign executions using the zoom blur system.' },
+          { value: '0.3s', description: 'average attention captured in the first frame.' },
+        ],
       },
     ],
   },
