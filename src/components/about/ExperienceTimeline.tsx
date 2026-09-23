@@ -14,34 +14,40 @@ interface ExperienceEntry {
 
 const experience: ExperienceEntry[] = [
   {
-    company: 'company a',
-    role: 'product design manager',
-    description: 'leading cross-functional design teams across brand, product, and digital — building scalable systems used by millions.',
-    years: '2020 — now',
+    company: 'Decathlon',
+    role: 'Product Design Manager',
+    description: 'Founded the Product Design team and led the design of the new Decathlon digital experience in Latam.',
+    years: '2022 — 2025',
   },
   {
-    company: 'company b',
+    company: 'Quanto - Fintech',
     role: 'senior design lead',
     description: 'defined visual languages from scratch and shipped end-to-end digital products across web and mobile.',
-    years: '2016 — 2020',
+    years: '2021 — 2022',
   },
   {
-    company: 'company c',
+    company: 'Eduk',
     role: 'ux & brand designer',
     description: 'worked at the intersection of brand strategy and product design for clients across europe and brazil.',
-    years: '2012 — 2016',
+    years: '2019 — 2021',
   },
   {
-    company: 'company d',
+    company: 'Geekie',
     role: 'designer',
     description: 'built and launched digital experiences for growth-stage companies in retail and e-commerce.',
-    years: '2008 — 2012',
+    years: '2016 — 2019',
   },
   {
-    company: 'company e',
+    company: 'Ginga',
     role: 'junior designer',
     description: 'started my career in graphic design, developing brand identities and communication systems.',
-    years: '2004 — 2008',
+    years: '2012 — 2015',
+  },
+  {
+    company: 'Globo.com',
+    role: 'UI Junior Designer',
+    description: 'started my career in graphic design, developing brand identities and communication systems.',
+    years: '2006 — 2011',
   },
 ]
 
