@@ -35,7 +35,8 @@ export interface Project {
   title: string
   category: ProjectCategory
   year: number
-  imageUrl: string
+  imageUrl: string        // homepage card thumbnail (3:2, 1800×1200)
+  heroImageUrl?: string   // case page hero (16:9, 3200×1800) — falls back to imageUrl
   caseImageUrl?: string
   description: string
   featured?: boolean

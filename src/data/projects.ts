@@ -9,6 +9,7 @@ export const projects: Project[] = [
     category: 'branding',
     year: 2024,
     imageUrl: '/images/projects/decathlon-brand-identity/thumbnail.png',
+    heroImageUrl: '/images/projects/decathlon-brand-identity/hero.png',
     description: 'We set out on a new challenge to complete reboot our app in South America.',
     featured: true,
     blocks: [

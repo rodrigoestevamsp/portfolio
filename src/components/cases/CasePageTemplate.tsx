@@ -40,7 +40,7 @@ export default function CasePageTemplate({ project, nextProject }: CasePageTempl
       {/* ── Full-bleed 100svh hero ── */}
       <div className={styles.heroMedia}>
         <MediaRenderer
-          imageUrl={project.imageUrl}
+          imageUrl={project.heroImageUrl ?? project.imageUrl}
           mediaUrl={project.mediaUrl}
           mediaType={project.mediaType}
           alt={project.title}
