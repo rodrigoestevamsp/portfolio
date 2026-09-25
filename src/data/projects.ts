@@ -13,10 +13,6 @@ export const projects: Project[] = [
     featured: true,
     blocks: [
       {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/decathlon-brand-identity/hero.png', alt: 'decathlon brand identity' },
-      },
-      {
         layout: 'text',
         label: 'approach',
         text: 'redefining a global sports brand through type, color, and system thinking.',
@@ -107,10 +103,6 @@ export const projects: Project[] = [
     description: 'campaign identity for decathlon\'s seasonal sport activation, bridging performance and everyday accessibility.',
     featured: true,
     blocks: [
-      {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/decathlon-campaign/hero.png', alt: 'decathlon sport campaign' },
-      },
       {
         layout: 'text',
         label: 'campaign',
@@ -203,10 +195,6 @@ export const projects: Project[] = [
     featured: true,
     blocks: [
       {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/brand-project/hero.png', alt: 'brand project hero' },
-      },
-      {
         layout: 'text',
         label: 'challenge',
         text: 'building a brand that earns trust from day one.',
@@ -298,10 +286,6 @@ export const projects: Project[] = [
     featured: true,
     blocks: [
       {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/geekie/hero.png', alt: 'geekie platform' },
-      },
-      {
         layout: 'text',
         label: 'context',
         text: 'designing for education means designing for every student, everywhere.',
@@ -391,10 +375,6 @@ export const projects: Project[] = [
     imageUrl: '/images/projects/reframe-pixelate/thumbnail.png',
     description: 'experimental visual tool for image manipulation, exploring pixel art aesthetics in contemporary design contexts.',
     blocks: [
-      {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/reframe-pixelate/hero.png', alt: 'reframe pixelate' },
-      },
       {
         layout: 'text',
         label: 'concept',
@@ -486,10 +466,6 @@ export const projects: Project[] = [
     description: 'material-driven design system inspired by natural wood textures and organic shadow play.',
     blocks: [
       {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/reframe-wood-shade/hero.png', alt: 'reframe wood shade' },
-      },
-      {
         layout: 'text',
         label: 'material',
         text: 'nature as the starting point — grain, shadow, and warmth as design principles.',
@@ -579,10 +555,6 @@ export const projects: Project[] = [
     imageUrl: '/images/projects/reframe-zoom-blur/thumbnail.png',
     description: 'motion-inspired series exploring zoom blur as a visual language for speed and transformation.',
     blocks: [
-      {
-        layout: 'full',
-        media: { imageUrl: '/images/projects/reframe-zoom-blur/hero.png', alt: 'reframe zoom blur' },
-      },
       {
         layout: 'text',
         label: 'motion',

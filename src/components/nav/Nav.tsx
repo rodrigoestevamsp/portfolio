@@ -17,7 +17,7 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-site-header="true">
       <nav className={styles.nav}>
         {/* Logo */}
         <Link href="/" className={`${styles.logo} no-transform`} onClick={() => setMenuOpen(false)}>

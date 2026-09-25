@@ -131,6 +131,13 @@ ul, ol {
   border-width: 0;
 }
 
+/* ─── Nav transparency over case hero ───────────────────── */
+html[data-nav-transparent="true"] [data-site-header] {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 /* ─── Reduced Motion ─────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

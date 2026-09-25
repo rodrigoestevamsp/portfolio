@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import ScrollReveal from '@/components/motion/ScrollReveal'
 import MediaRenderer from '@/components/media/MediaRenderer'
@@ -11,32 +14,55 @@ interface CasePageTemplateProps {
 }
 
 export default function CasePageTemplate({ project, nextProject }: CasePageTemplateProps) {
+  const sentinelRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current
+    if (!sentinel) return
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        document.documentElement.dataset.navTransparent = entry.isIntersecting ? 'true' : 'false'
+      },
+      { threshold: 0 }
+    )
+    obs.observe(sentinel)
+
+    return () => {
+      obs.disconnect()
+      delete document.documentElement.dataset.navTransparent
+    }
+  }, [])
+
   return (
     <main className={styles.page}>
 
-      {/* ── Header: title + meta ── */}
-      <div className={styles.hero}>
-        <h1 className={styles.title}>{project.title}</h1>
-        <div className={styles.meta}>
-          <span className={styles.category}>{project.category}</span>
-          <span className={styles.separator}>—</span>
-          <span className={styles.year}>{project.year}</span>
-        </div>
+      {/* ── Full-bleed 100svh hero ── */}
+      <div className={styles.heroMedia}>
+        <MediaRenderer
+          imageUrl={project.imageUrl}
+          mediaUrl={project.mediaUrl}
+          mediaType={project.mediaType}
+          alt={project.title}
+          sizes="100vw"
+          priority
+        />
+        <div ref={sentinelRef} className={styles.heroSentinel} />
       </div>
 
-      {/* ── Hero media ── */}
-      <ScrollReveal variant="subtle">
-        <div className={styles.imageWrapper}>
-          <MediaRenderer
-            imageUrl={project.imageUrl}
-            mediaUrl={project.mediaUrl}
-            mediaType={project.mediaType}
-            alt={project.title}
-            sizes="(max-width: 809px) 100vw, 90vw"
-            priority
-          />
-        </div>
-      </ScrollReveal>
+      {/* ── Title + meta below hero ── */}
+      <div className={styles.heroContent}>
+        <ScrollReveal variant="subtle">
+          <h1 className={styles.title}>{project.title}</h1>
+        </ScrollReveal>
+        <ScrollReveal variant="subtle" delay={0.06}>
+          <div className={styles.meta}>
+            <span className={styles.category}>{project.category}</span>
+            <span className={styles.separator}>—</span>
+            <span className={styles.year}>{project.year}</span>
+          </div>
+        </ScrollReveal>
+      </div>
 
       {/* ── Description ── */}
       <div className={styles.description}>
